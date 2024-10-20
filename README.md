@@ -61,4 +61,6 @@ Send a Whatsapp message to the Twilio Sandbox phone number, and see the response
 
 ## Usage
 
-TODO...
+Send messages to the Twilio Sandbox phone number on whatsapp. Get responses from ChatGPT.
+
+If you want to change the model used, send a message like "model: gpt-4"
