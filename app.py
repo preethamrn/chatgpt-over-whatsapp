@@ -29,6 +29,12 @@ def handleModelChange(incoming_msg):
         bot_reply = f'{new_model} is not an allowed model'
     return bot_reply
 
+def handleBilling(incoming_msg):
+    # TODO: currently openai doesn't support this using the secret key. Only session keys (ie, from the browser) can make these requests.
+    # https://api.openai.com/v1/dashboard/billing/subscription
+    # https://api.openai.com/v1/dashboard/billing/usage?start_date={}&end_date={}
+    return 'not implemented'
+
 def handleChatGPTReply(incoming_msg):
     # Forward the message to ChatGPT
     try:
@@ -54,6 +60,8 @@ def webhook():
 
     if incoming_msg.startswith('model: '):
         bot_reply = handleModelChange(incoming_msg)
+    elif incoming_msg == 'billing':
+        bot_reply = handleBilling(incoming_msg)
     else:
         bot_reply = handleChatGPTReply(incoming_msg)
 
@@ -64,5 +72,5 @@ def webhook():
 
 if __name__ == '__main__':
     # TODO: use a production WSGI server instead.
-    # TODO: add other capabilities (eg. checking billing amount left, sending images, etc.) 
+    # TODO: add other capabilities (eg. sending images, using other api providers, etc.) 
     app.run(host='0.0.0.0', port=5000)
