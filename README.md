@@ -14,6 +14,16 @@ ChatGPT Over Whatsapp (COW) will solve all your problems.
 
 ## Installation
 
+Create a .env file with the following tokens.
+```
+# .env
+TWILIO_ACCOUNT_SID=your_account_sid
+TWILIO_AUTH_TOKEN=your_auth_token
+TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886  # Twilio sandbox number
+OPENAI_API_KEY=your_openai_api_key
+AUTHORIZED_NUMBER=whatsapp:+your_verified_number
+```
+
 TODO...
 
 ## Testing
